@@ -473,6 +473,8 @@ i {
     display: flex;
     flex-direction: column; /* Align content vertically */
     justify-content: space-between; /* Space out content evenly */
+    display: flex;
+  flex-direction: column;
 }
 
 .card-content h3 {
@@ -483,22 +485,20 @@ i {
 }
 
 .card-content p {
-    font-size: 14px;
-    color: var(--text-color);
-    margin-bottom: 20px;
-    flex-grow: 1; /* Ensures the paragraph takes up extra space if needed */
+  font-size: 14px;
+  color: var(--text-color);
+  margin: 0 0 8px 0; /* space below paragraph */
+  /* Remove flex-grow */
 }
 
-.card-content .btn {
-    text-decoration: none;
-    font-size: 14px;
-    padding: 10px 15px;
-    background: var(--first-color);
-    color: var(--color-white);
-    border-radius: 5px;
-    transition: background 0.3s;
-    align-self: flex-start; /* Align the button to the left */
+.view-link {
+  text-decoration: none;
+  color: blue;
+  font-weight: bold;
+  /* Remove align-self and margin-top */
 }
+
+
 
 .card-content .btn:hover {
     background: rgba(35, 140, 47, 0.8);

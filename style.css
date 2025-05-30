@@ -923,6 +923,18 @@ body.dark .contact-framed {
  
 
   
+.hamburger {
+  display: none; /* hidden on desktop */
+  flex-direction: column;
+  cursor: pointer;
+  gap: 4px;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: black;
+}
   
   
   
