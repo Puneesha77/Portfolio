@@ -460,10 +460,11 @@ body.dark .nav-logo .logo-image {
     flex-wrap: wrap;
     gap: 40px;
     justify-content: center;
-    margin-top: 40px;
-    
-    
 }
+
+    
+    
+
 
 .contact-info {
     flex: 1;
@@ -506,7 +507,7 @@ body.dark .nav-logo .logo-image {
     background: var(--box-color);
     padding: 20px 30px;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(240, 240, 240, 0.5);
+    box-shadow: 0 4px 8px rgba(65, 64, 64, 0.5);
 }
 
 .contact-form form {
@@ -729,7 +730,7 @@ body.dark .contact-framed {
     border-radius: 10px; /* Rounded corners */
     padding: 40px; /* Adds spacing inside the border */
     background: var(--box-color); /* Background color for the section */
-    background: linear-gradient(35deg, #323232, #000000); /* Adds a subtle shadow for depth */
+    background: linear-gradient(35deg, #000000, #000000); /* Adds a subtle shadow for depth */
     margin: 20px auto; /* Adds spacing around the section */
     max-width: 1200px; /* Limits the maximum width */
 }
