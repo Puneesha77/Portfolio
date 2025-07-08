@@ -81,6 +81,12 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 
+  function myMenuFunction() {
+    const navMenu = document.getElementById("myNavMenu");
+    navMenu.classList.toggle("active");
+  }
+
+
   
 });
 

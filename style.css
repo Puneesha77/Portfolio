@@ -178,7 +178,9 @@ nav {
   transform: scaleX(1); /* Fully visible */
   transform-origin: left; /* Animate from left to right */
 }
-
+.nav-menu {
+  transition: all 0.3s ease-in-out;
+}
 
 
  
