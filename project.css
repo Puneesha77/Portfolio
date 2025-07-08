@@ -1374,6 +1374,14 @@ body.dark .contact-framed {
   z-index: 1000; /* Ensure it appears above other elements */
 }
  /* Projects Section */
+ #projects h2 {
+  font-size: 1.8rem;
+  margin-top: 3rem;
+  color: #215830;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 0.5rem;
+}
+
 .section#projects {
   padding: 60px 20px;
   background: linear-gradient(135deg, #f5f7fa, #e4f3eb);
