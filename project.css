@@ -431,6 +431,7 @@ i {
 
 .section {
     padding: 60px 10vw;
+   
     text-align: center;
 }
 
@@ -1408,6 +1409,7 @@ body.dark .section#projects h1 {
   font-size: 2.8rem;
   color: #333;
   margin-bottom: 40px;
+  margin-top: 10px;
   position: relative;
 }
 
@@ -1417,7 +1419,7 @@ body.dark .section#projects h1 {
   width: 80px;
   height: 4px;
   background: #215830;
-  margin: 10px auto 0;
+  margin: 5px auto 0;
   border-radius: 2px;
 }
 
