@@ -910,43 +910,64 @@ ul.tech {
 .tools-section {
   text-align: center;
   margin: 60px auto;
+  padding: 0 20px;
+  width: 300p;
 }
 
+/* Layout each category (IDEs, Databases, etc.) in its own column */
+.tech-section {
+  display: inline-block;
+  vertical-align: top;
+  margin: 20px;
+  text-align: center;
+}
+
+/* Header inside each section */
+.tech-section h3 {
+  margin-bottom: 20px;
+}
+
+/* Grid layout inside each section */
 .tools-grid {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 30px;
-  margin-top: 30px;
+  flex-direction: column;  /* Stack vertically inside the column */
+  gap: 20px;
+  align-items: center;
 }
 
+/* Individual tool cards */
 .tool-card {
-  width: 100px;
-  height: 100px;
+  width: 120px;
+  height: 120px;
   border-radius: 12px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s;
+  background-color: #fff;
 }
 
-.tool-card img {
-  width: 40px;
-  height: 40px;
+/* Tool icon */
+.tool-card img,
+.tool-card i {
+  width: 48px;
+  height: 48px;
   object-fit: contain;
   margin-bottom: 8px;
 }
 
+/* Tool name */
 .tool-card span {
   font-size: 14px;
   color: #333;
 }
 
+/* Hover effect */
 .tool-card:hover {
   transform: scale(1.1);
-  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
 }
 
 /* Dark mode */
@@ -957,7 +978,6 @@ body.dark .tool-card {
 body.dark .tool-card span {
   color: #fff;
 }
-
 
 
 

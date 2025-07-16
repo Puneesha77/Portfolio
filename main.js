@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   // Typewriter Effect
   const typedTextElement = document.getElementById("typedText");
-  const words = ["Aspiring Software Engineer", "Frontend Developer in Training", "Tech Enthusiast & Problem Solver","Future Full-Stack Developer"];
+  const words = ["Aspiring Software Engineer", "Backend Developer in Training", "Tech Enthusiast & Problem Solver","Future Full-Stack Developer"];
   let wordIndex = 0;
   let charIndex = 0;
 
