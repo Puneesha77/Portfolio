@@ -907,80 +907,320 @@ ul.tech {
   list-style: none;
   padding-left: 0;
 }
+/* Main tools section container */
 .tools-section {
   text-align: center;
-  margin: 60px auto;
-  padding: 0 20px;
-  width: 300p;
+  margin: 80px auto;
+  padding: 60px 20px;
+  max-width: 1200px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
 }
 
-/* Layout each category (IDEs, Databases, etc.) in its own column */
+/* Animated background overlay */
+.tools-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="75" cy="75" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="50" cy="10" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="10" cy="60" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="90" cy="40" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+  opacity: 0.3;
+  animation: float 20s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Section title */
+.tools-section h2 {
+  color: #fff;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 50px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  position: relative;
+  z-index: 1;
+}
+
+/* Container for all tech sections */
+.tech-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Individual tech section */
 .tech-section {
-  display: inline-block;
-  vertical-align: top;
-  margin: 20px;
-  text-align: center;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  padding: 20px 15px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hover effect for tech section */
+.tech-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transition: left 0.5s ease;
+}
+
+.tech-section:hover::before {
+  left: 100%;
+}
+
+.tech-section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
 }
 
 /* Header inside each section */
 .tech-section h3 {
-  margin-bottom: 20px;
+  margin-bottom: 18px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2c3e50;
+  position: relative;
+  display: inline-block;
 }
 
-/* Grid layout inside each section */
+.tech-section h3::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30px;
+  height: 2px;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+  border-radius: 1px;
+}
+
+/* Grid layout for tools */
 .tools-grid {
-  display: flex;
-  flex-direction: column;  /* Stack vertically inside the column */
-  gap: 20px;
-  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  width: 100%;
+  justify-items: center;
 }
 
 /* Individual tool cards */
 .tool-card {
-  width: 120px;
-  height: 120px;
-  border-radius: 12px;
+  width: 80px;
+  height: 80px;
+  border-radius: 14px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s;
-  background-color: #fff;
+  background: #fff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: pointer;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Tool card hover effects */
+.tool-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.tool-card:hover::before {
+  opacity: 0.1;
+}
+
+.tool-card:hover {
+  transform: translateY(-8px) scale(1.05);
+  box-shadow: 0 12px 30px rgba(102, 126, 234, 0.3);
 }
 
 /* Tool icon */
-.tool-card img,
+.tool-card img, 
 .tool-card i {
-  width: 48px;
-  height: 48px;
+  width: 32px;
+  height: 32px;
   object-fit: contain;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.tool-card:hover img,
+.tool-card:hover i {
+  transform: scale(1.2);
+  filter: brightness(1.1) saturate(1.1);
 }
 
 /* Tool name */
 .tool-card span {
-  font-size: 14px;
-  color: #333;
+  font-size: 10px;
+  font-weight: 500;
+  color: #2c3e50;
+  text-align: center;
+  line-height: 1.2;
+  position: relative;
+  z-index: 1;
+  transition: color 0.3s ease;
 }
 
-/* Hover effect */
-.tool-card:hover {
-  transform: scale(1.1);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+.tool-card:hover span {
+  color: #667eea;
+  font-weight: 600;
+}
+
+.tool-card:hover span {
+  color: #667eea;
+}
+
+/* Staggered animation for cards */
+.tool-card:nth-child(1) { animation-delay: 0.1s; }
+.tool-card:nth-child(2) { animation-delay: 0.2s; }
+.tool-card:nth-child(3) { animation-delay: 0.3s; }
+.tool-card:nth-child(4) { animation-delay: 0.4s; }
+.tool-card:nth-child(5) { animation-delay: 0.5s; }
+.tool-card:nth-child(6) { animation-delay: 0.6s; }
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.tool-card {
+  animation: fadeInUp 0.6s ease forwards;
 }
 
 /* Dark mode */
+body.dark .tools-section {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+}
+
+body.dark .tech-section {
+  background: rgba(26, 26, 46, 0.95);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+body.dark .tech-section h3 {
+  color: #e2e8f0;
+}
+
 body.dark .tool-card {
-  background-color: #1a1a1a;
+  background: #1a1a2e;
+  border-color: rgba(255, 255, 255, 0.1);
 }
 
 body.dark .tool-card span {
-  color: #fff;
+  color: #e2e8f0;
 }
 
+body.dark .tool-card:hover span {
+  color: #667eea;
+}
 
+body.dark .tools-section h2 {
+  color: #e2e8f0;
+}
 
+/* Responsive design */
+@media (max-width: 1024px) {
+  .tech-container {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .tools-section {
+    margin: 30px 10px;
+    padding: 30px 15px;
+  }
   
+  .tools-section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+  }
   
+  .tech-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
   
+  .tech-section {
+    padding: 15px 12px;
+  }
+  
+  .tools-grid {
+    gap: 8px;
+  }
+  
+  .tool-card {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .tool-card img, 
+  .tool-card i {
+    width: 28px;
+    height: 28px;
+  }
+  
+  .tool-card span {
+    font-size: 9px;
+  }
+}
+
+@media (max-width: 480px) {
+  .tech-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .tool-card {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .tool-card img, 
+  .tool-card i {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .tool-card span {
+    font-size: 8px;
+  }
+}
