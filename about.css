@@ -913,7 +913,7 @@ ul.tech {
   margin: 80px auto;
   padding: 60px 20px;
   max-width: 1200px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #154214 0%, #153c20 100%);
   border-radius: 20px;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
   position: relative;
@@ -1010,7 +1010,7 @@ ul.tech {
   transform: translateX(-50%);
   width: 30px;
   height: 2px;
-  background: linear-gradient(90deg, #667eea, #764ba2);
+  background: linear-gradient(90deg, #66ea7e, #4ba261);
   border-radius: 1px;
 }
 
@@ -1049,7 +1049,7 @@ ul.tech {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(135deg, #667eea, #764ba2);
+  background: linear-gradient(135deg, #66ea75, #55a24b);
   opacity: 0;
   transition: opacity 0.3s ease;
 }
@@ -1060,7 +1060,7 @@ ul.tech {
 
 .tool-card:hover {
   transform: translateY(-8px) scale(1.05);
-  box-shadow: 0 12px 30px rgba(102, 126, 234, 0.3);
+  box-shadow: 0 12px 30px rgba(102, 234, 113, 0.3);
 }
 
 /* Tool icon */
@@ -1085,7 +1085,7 @@ ul.tech {
 .tool-card span {
   font-size: 10px;
   font-weight: 500;
-  color: #2c3e50;
+  color: #30502c;
   text-align: center;
   line-height: 1.2;
   position: relative;
@@ -1094,12 +1094,12 @@ ul.tech {
 }
 
 .tool-card:hover span {
-  color: #667eea;
+  color: #7aea66;
   font-weight: 600;
 }
 
 .tool-card:hover span {
-  color: #667eea;
+  color: #6fea66;
 }
 
 /* Staggered animation for cards */
@@ -1127,11 +1127,11 @@ ul.tech {
 
 /* Dark mode */
 body.dark .tools-section {
-  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  background: linear-gradient(135deg, #1a2e1b 0%, #163e25 100%);
 }
 
 body.dark .tech-section {
-  background: rgba(26, 26, 46, 0.95);
+  background: rgba(0, 0, 0, 0.95);
   border-color: rgba(255, 255, 255, 0.1);
 }
 
@@ -1140,7 +1140,7 @@ body.dark .tech-section h3 {
 }
 
 body.dark .tool-card {
-  background: #1a1a2e;
+  background: #102311;
   border-color: rgba(255, 255, 255, 0.1);
 }
 
@@ -1149,7 +1149,7 @@ body.dark .tool-card span {
 }
 
 body.dark .tool-card:hover span {
-  color: #667eea;
+  color: #66ea6a;
 }
 
 body.dark .tools-section h2 {
