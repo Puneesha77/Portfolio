@@ -96,7 +96,6 @@ nav {
     padding: 0;
 }
 
-
 .nav-link {
     text-decoration: none;
     color: var(--text-color);
@@ -106,24 +105,8 @@ nav {
     transition: color 0.3s ease;
 }
 
-/* Animated Underline Effect */
-.nav-link::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -5px;
-    height: 2px;
-    width: 100%;
-    background-color: var(--first-color);
-    transform: scaleX(0);
-    transform-origin: right;
-    transition: transform 0.3s ease;
-}
-
-.nav-link:hover::after,
-.nav-link.active-link::after {
-    transform: scaleX(1);
-    transform-origin: left;
+.nav-link:hover {
+    color: var(--first-color);
 }
 
 /* Active Link Styling */
@@ -822,7 +805,6 @@ body.dark .top-footer {
     white-space: nowrap;
     z-index: 1000;
 }
-
 
 /* Responsive Design */
 @media (max-width: 768px) {
