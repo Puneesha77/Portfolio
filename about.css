@@ -69,125 +69,106 @@ html {
     scroll-behavior: smooth;
 }
 
-/*--Navbar--*/
-
+/* Navbar */
 nav {
     position: fixed;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     width: 100%;
-    height: 100px;
-    line-height: 70px;
+    height: 80px;
     background: var(--nav-color);
-    padding-inline: 10vw;
-   z-index: 1000;
-    transition: top 0.3s;
-    
+    padding: 0 5%;
+    z-index: 999;
+    transition: top 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
-.nav-logo {
-    position: relative;
-    
+
+body.dark nav {
+    background: transparent;
+    box-shadow: none;
 }
+
 .nav-logo {
     display: flex;
-    align-items: center; /* Vertically center the logo in the navbar */
-    
+    align-items: center;
 }
 
 .logo-image {
-    width: 60px; /* Adjust the width to fit your needs */
-    height: 60px; /* Maintain aspect ratio */
-    object-fit: contain; /* Ensure the image fits nicely within the container */
-    box-shadow: 1px 1px 6px 3px #c5d1c8; /* Adjusted box-shadow for a balanced appearance */
-    border-radius: 4px; /* Optional: Slight rounding for better aesthetics */
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    box-shadow: 0 2px 8px rgba(197, 209, 200, 0.5);
+    border-radius: 8px;
 }
-.nav-name {
-    font-size: 30px;
-    font-weight: 600;
-    color: var(--logo-color);
+
+body.dark .nav-logo .logo-image {
+    filter: brightness(0.8);
 }
 
 .nav-menu,
 .nav_menu_list {
     display: flex;
-    column-gap: 30px; /* Fixed from -30px to 30px */
-}
-
-.nav-menu .nav_list {
     list-style: none;
-    position: relative;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
 }
 
-/* Base styles for nav-links */
 .nav-link {
-    text-decoration: none; /* Remove default underline */
-    color: var(--text-color); /* Use your text color variable */
-    font-weight: 700;
-    padding-inline: 30px;
-    padding-top: 20px;
-    margin-inline: 40px;
-    position: relative; /* Required for pseudo-element positioning */
-    transition: color 0.3s ease-in-out; /* Ensure smooth color transition */
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    position: relative;
+    transition: color 0.3s ease;
 }
 
+.nav-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    height: 2px;
+    width: 100%;
+    background-color: var(--first-color);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+}
 
+.nav-link.active-link::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.active-link {
+    color: var(--first-color);
+}
 
 .nav-menu-btn {
     display: none;
 }
 
 .nav-menu-btn i {
-    font-size: 28px;
+    font-size: 24px;
     cursor: pointer;
     color: var(--nav-icon);
 }
 
-.active-link {
-    position: relative;
-    color: var(--first-color);
-    transition: 0.3s;
+body.dark .nav-link {
+    color: var(--color-white);
+    transition: color 0.3s ease-in-out;
 }
 
-.active-link::after {
-    content: "";
-    position: absolute;
-    left: 50%;
-    bottom: -15px;
-    transform: translate(-50%, -50%);
-    width: 50px;
-    height: 2px;
-    background: var(--first-color);
-    width: 100%; /* Underline remains visible for the active link */
-}
-/* Create the underline effect using the ::after pseudo-element */
-.nav-link::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  height: 2px;
-  width: 100%;
-  background-color: #1b831b; /* Change this to your desired underline color */
-  transform: scaleX(0); /* Initially hidden */
-  transform-origin: right; /* Start animation from the right */
-  transition: transform 0.3s ease;
+body.dark .nav-menu-btn i {
+    color: var(--color-white);
 }
 
-/* Show the underline on hover */
-.nav-link:hover::after {
-  transform: scaleX(1); /* Fully visible */
-  transform-origin: left; /* Animate from left to right */
-}
-
-
-
- 
-/*--Mode Toggle--*/
-
+/* Mode Toggle */
 .mode {
     display: flex;
     align-items: center;
-    margin-right: -2%;
 }
 
 .moon-sun {
@@ -197,27 +178,57 @@ nav {
     justify-content: center;
     height: 40px;
     width: 40px;
-    border-radius: 50%; /* Circular shape */
+    border-radius: 50%;
     cursor: pointer;
     background: var(--mode-color);
+    transition: all 0.3s ease;
+}
+
+.moon-sun:hover {
+    transform: scale(1.1);
 }
 
 .moon-sun :is(#moon, #sun) {
     position: absolute;
-    font-size: 20px; /* Add appropriate size for the icons */
-    color: black; /* Set color for better visibility */
+    font-size: 18px;
+    color: black;
     transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
 #sun {
-    opacity: 0; /* Start hidden */
-    transform: scale(0.8); /* Slightly smaller when hidden */
+    opacity: 0;
+    transform: scale(0.8);
 }
 
 #moon {
-    opacity: 1; /* Start visible */
-    transform: scale(1); /* Normal size */
+    opacity: 1;
+    transform: scale(1);
 }
+
+body.dark #moon {
+    opacity: 0;
+    transform: scale(0.8);
+}
+
+body.dark #sun {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 4px;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: black;
+}
+
 
 /* Dark mode toggle */
 body.dark #moon {
@@ -553,135 +564,173 @@ body.dark .nav-logo .logo-image {
     filter: brightness(0.8); /* Adjust logo brightness for better visibility */
 }
 
-
-/* Footer Styling */
-
-
+/* Footer */
 footer {
     background: var(--nav-color);
     color: var(--text-color);
-    padding: 40px 10vw;
-    font-size: 14px;
+    padding: 3rem 5% 1rem;
+    margin-top: 4rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+body.dark footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .footer-container {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    
-}
-.top-footer {
-  margin: 0 auto;  /* center horizontally */
-  max-width: 1200px; /* or any width you want */
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .top-footer {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 180px;
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 10px;
-    
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-.footer-logo {
-    flex:1;
-    max-width: 250px;
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav_menu_list {
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: var(--nav-color);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        display: none;
+    }
+    
+    .nav-menu-btn {
+        display: block;
+    }
+    
+    .section-title {
+        font-size: 2.5rem;
+    }
+    
+    .category-title {
+        font-size: 1.5rem;
+    }
+    
+    .project-container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .top-footer {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+    }
+    
+    .social-icons {
+        justify-content: center;
+    }
+    
+    .section {
+        padding: 80px 3% 40px;
+    }
+    
+    .contact-framed {
+        padding: 20px;
+    }
+
+    .contact-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .card-content {
+        padding: 1.5rem;
+    }
+    
+    .tech-tag {
+        font-size: 0.7rem;
+        padding: 0.2rem 0.6rem;
+    }
 }
 
 .footer-logo-image {
-    width: 80px;
-    margin-bottom: 2px;
-    margin-left: 60px;
-     box-shadow: 1px 1px 6px 3px #c5d1c8;
+    width: 60px;
+    height: 60px;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 8px rgba(197, 209, 200, 0.3);
+    border-radius: 8px;
 }
 
 .footer-description {
-    font-size: 14px;
+    font-size: 0.9rem;
     color: var(--text-color);
     line-height: 1.6;
-    
+    margin-top: 1rem;
 }
 
 .footer-links h3,
 .footer-social h3 {
-    font-size: 16px;
-    font-weight: 700;
-    margin-bottom: 10px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
     color: var(--first-color);
-    
 }
 
 .footer-menu {
     list-style: none;
-    padding: 20px;
-    margin: 10;
+    padding: 0;
+    margin: 0;
 }
 
 .footer-menu-list {
-    margin-bottom: 8px;
+    margin-bottom: 0.5rem;
 }
 
 .footer-menu-list a {
     text-decoration: none;
     color: var(--text-color);
-    transition: color 0.3s;
+    transition: color 0.3s ease;
+    font-size: 0.9rem;
 }
 
 .footer-menu-list a:hover {
     color: var(--first-color);
 }
 
-.footer-social {
-    flex: 1;
-     
-}
-.footer-social .social-icons {
-    display: flex;
-    flex-direction: column; /* Stack icons vertically */
-    gap: 2px;
-    margin-top: 10px;
-    
-    align-items: flex-start; /* Optional: align to left */
-}
-
-
-.social-icons {
-    display: flex;
-    gap: 15px;
-    margin-top: 20px;
-    
-    
-}
-
 .social-icon {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 50px;
-    height: 50px;
+    width: 45px;
+    height: 45px;
     background: var(--box-color);
     border-radius: 50%;
     color: var(--icon-color);
-    transition: background 0.3s, color 0.3s, transform 0.3s;
-    font-size: 18px;
-  
+    transition: all 0.3s ease;
+    font-size: 1.2rem;
+    text-decoration: none;
+    position: relative;
 }
 
 .social-icon:hover {
     background: var(--first-color);
-    color: var(--color-white);
-    transform: scale(1.1);
+    color: white;
+    transform: translateY(-3px);
 }
 
 .bottom-footer {
     text-align: center;
-    padding-top: 20px;
+    padding-top: 2rem;
 }
 
 .bottom-footer p {
-    font-size: 13px;
+    font-size: 0.85rem;
     color: var(--text-color);
 }
 
@@ -695,21 +744,24 @@ footer {
     text-decoration: underline;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .top-footer {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    .footer-links,
-    .footer-social {
-        max-width: 100%;
-    }
+/* Popup Message */
+#popup-message {
+    position: absolute;
+    top: -45px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #4ade80;
+    font-size: 0.75rem;
+    padding: 0.5rem 0.75rem;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    z-index: 1000;
 }
-
-
 
 
 .social-icon {
