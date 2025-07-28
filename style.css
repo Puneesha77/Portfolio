@@ -13,7 +13,7 @@
     --body-color: rgba(250, 250, 250);
     --color-white: rgba(250, 250, 250);
     --text-color: rgba(38, 37, 37);
-    --first-color: rgb(0, 0, 0);
+    --first-color: rgb(24, 132, 55);
     --first-shadow: rgba(0, 0, 0, 0.1);
     --box-color: #fff;
     --nav-color: #fff;
@@ -473,7 +473,14 @@ body.dark .project-card {
 .card-content h3 {
     font-size: 1.25rem;
     font-weight: 600;
-    color: var(--first-color);
+    color: var(--text-color);
+    margin-bottom: 1rem;
+    line-height: 1.3;
+}
+body.dark.card-content h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-white);
     margin-bottom: 1rem;
     line-height: 1.3;
 }
@@ -534,10 +541,10 @@ body.dark .project-card {
 .contact-framed {
     border: 2px solid var(--first-color);
     border-radius: 10px;
-    padding: 40px;
+    padding: 50px;
     background: var(--box-color);
     background: linear-gradient(35deg, #ffffff, #ffffff);
-    margin: 20px auto;
+    margin: 0px ;
     max-width: 1200px;
 }
 
@@ -556,7 +563,7 @@ body.dark .contact-framed {
     font-size: 24px;
     font-weight: bold;
     color: var(--first-color);
-    margin-bottom: 20px;
+    margin-bottom: 40px;
 }
 
 .info-item {
