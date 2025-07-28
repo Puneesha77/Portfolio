@@ -534,8 +534,10 @@ body.dark.card-content h3 {
 .contact-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 40px;
+    gap: 20px;
     justify-content: center;
+    margin-top: 40px;
+
 }
 
 .contact-framed {
@@ -544,7 +546,7 @@ body.dark.card-content h3 {
     padding: 50px;
     background: var(--box-color);
     background: linear-gradient(35deg, #ffffff, #ffffff);
-    margin: 0px ;
+    margin: 20px ;
     max-width: 1200px;
 }
 
