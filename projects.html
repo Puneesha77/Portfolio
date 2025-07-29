@@ -53,7 +53,7 @@
                                 <div class="card-content">
                                     <h3>Smart Inventory & Billing Manager</h3>
                                     <p>Built a <strong>desktop</strong> Inventory and Billing System using <strong>Java (NetBeans)</strong> with <strong>MySQL (PHPMyAdmin)</strong> for efficient stock and sales management.</p>
-                                    <a href="https://github.com/Puneesha77/project-one" class="view-link">View Project</a>
+                                    <a href="https://github.com/Puneesha77/Project-1" class="view-link">View Project</a>
                                     <div class="tech-tag-container">
                                         <span class="tech-tag">Java</span>
                                         <span class="tech-tag">MySQL</span>
@@ -62,6 +62,8 @@
                                     </div>
                                 </div>
                             </div>
+
+                            
 
                             <div class="project-card">
                                 <div class="card-content">
@@ -96,11 +98,25 @@
                                 <div class="card-content">
                                     <h3>Clothing Website</h3>
                                     <p>Developed a <strong>website</strong> using <strong>HTML, CSS, JavaScript</strong> for product showcasing and ordering interface.</p>
-                                    <a href="https://github.com/Puneesha77/project-three" class="view-link">View Project</a>
+                                    <a href="https://github.com/Puneesha77/Project-4" class="view-link">View Project</a>
                                     <div class="tech-tag-container">
                                         <span class="tech-tag">HTML</span>
                                         <span class="tech-tag">CSS</span>
                                         <span class="tech-tag">JavaScript</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="project-card">
+                                <div class="card-content">
+                                    <h3>Harware Billing & Invemtory System</h3>
+                                    <p>Developed a <strong>Desktop application</strong> using <strong>JC#</strong> with <strong></strong>, built on <strong>Netbeans</strong> for efficient Hardware management.</p>
+                                    <a href="https://github.com/Puneesha77/project-two" class="view-link">View Project</a>
+                                    <div class="tech-tag-container">
+                                        <span class="tech-tag">C#</span>
+                                        <span class="tech-tag">NetBeans</span>
+                                        <span class="tech-tag">Sql</span>
+                                        <span class="tech-tag">CrystalReports</span>
                                     </div>
                                 </div>
                             </div>
@@ -147,7 +163,7 @@
                                 <div class="card-content">
                                     <h3>Wake-Up Assistant</h3>
                                     <p>Designed and built an <strong>Arduino-based robotic system</strong> using <strong>C++, PIR and ultrasonic sensors, servo/DC motors, and Bluetooth module</strong> for motion detection and wake-up automation.</p>
-                                    <a href="https://github.com/Puneesha77/project-three" class="view-link">View Project</a>
+                                    <a href="https://github.com/Puneesha77/waking_up_robot" class="view-link">View Project</a>
                                     <div class="tech-tag-container">
                                         <span class="tech-tag">C++</span>
                                         <span class="tech-tag">Arduino</span>
@@ -163,7 +179,7 @@
                                 <div class="card-content">
                                     <h3>Hybrid Purity Checker – IoT Water Quality System</h3>
                                     <p>Engineered a <strong>NodeMCU-based IoT system</strong> for real-time water monitoring using <strong>TDS sensor, flow sensor, water level detection, Firebase Realtime Database</strong>, and <strong>NTP time sync</strong> for automated pump control.</p>
-                                    <a href="https://github.com/Puneesha77/project-water-quality" class="view-link">View Project</a>
+                                    <a href="https://github.com/Puneesha77/IoT-" class="view-link">View Project</a>
                                     <div class="tech-tag-container">
                                         <span class="tech-tag">IoT</span>
                                         <span class="tech-tag">C++</span>
@@ -188,7 +204,7 @@
                                 <div class="card-content">
                                     <h3>ChatBot</h3>
                                     <p>Developed a <strong>web-based AI chatbot</strong> using <strong>HTML, CSS, JavaScript</strong>, and the <strong>Google Generative AI API (Gemini)</strong>. The chatbot interacts in real-time with users, processes natural language input, and generates human-like responses. Integrated with <strong>Node.js backend</strong> and <strong>Express</strong> to handle API requests securely.</p>
-                                    <a href="https://github.com/Puneesha77/project-chatbot" class="view-link">View Project</a>
+                                    <a href="https://github.com/Puneesha77/Chat-Bot" class="view-link">View Project</a>
                                     <div class="tech-tag-container">
                                         <span class="tech-tag">AI</span>
                                         <span class="tech-tag">JavaScript</span>
@@ -248,6 +264,27 @@
     </div>
 
     <script>
+        // Hamburger Menu Toggle
+        const navMenuBtn = document.getElementById('nav-menu-btn');
+        const navMenu = document.getElementById('nav-menu');
+
+        navMenuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            navMenuBtn.classList.toggle('active');
+        });
+
+        // Close menu when clicking on a nav link (mobile)
+        const navLinks = document.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                navMenuBtn.classList.remove('active');
+                
+                // Update active link
+                navLinks.forEach(l => l.classList.remove('active-link'));
+                link.classList.add('active-link');
+            });
+        });
         function copyEmail() {
             const email = "puneeshar@gmail.com";
             const popup = document.getElementById("popup-message");

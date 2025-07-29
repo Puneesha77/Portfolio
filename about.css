@@ -905,7 +905,12 @@ body.dark .top-footer {
 .footer-menu-list a:hover {
     color: var(--first-color);
 }
-
+.footer-menu,
+.footer-menu ul,
+.footer-menu-list {
+    list-style: none !important;
+    padding-left: 0 !important;
+}
 .social-icons {
     display: flex;
     gap: 1rem;

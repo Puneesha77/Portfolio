@@ -95,6 +95,25 @@ nav {
     margin: 0;
     padding: 0;
 }
+.nav-menu {
+    /* Add transition for smooth animation */
+    transition: max-height 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .nav-menu {
+        /* Change from display: none to max-height for smooth animation */
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        padding: 0;
+    }
+    
+    .nav-menu.active {
+        max-height: 300px;
+        padding: 1rem 0;
+    }
+}
 
 .nav-link {
     text-decoration: none;
