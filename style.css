@@ -536,17 +536,19 @@ body.dark.card-content h3 {
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
-    margin-top: 40px;
+    margin-top: 50px;
+    
+    
 
 }
 
 .contact-framed {
     border: 2px solid var(--first-color);
     border-radius: 10px;
-    padding: 50px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     background: var(--box-color);
     background: linear-gradient(35deg, #ffffff, #ffffff);
-    margin: 20px ;
     max-width: 1200px;
 }
 
@@ -595,9 +597,10 @@ body.dark .contact-framed {
     flex: 1;
     max-width: 500px;
     background: var(--body-color);
-    padding: 20px 30px;
+    padding: 20px 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(65, 64, 64, 0.5);
+
 }
 
 .contact-form form {

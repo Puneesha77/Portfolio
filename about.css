@@ -587,6 +587,7 @@ body.dark .tech-section {
 .tech-section h3 {
   font-size: 1.4rem;
   margin-bottom: 15px;
+  text-align: center;
 }
 
 ul.goals {
@@ -600,17 +601,7 @@ ul.tech {
 }
 
 /* Main tools section container */
-.tools-section {
-  text-align: center;
-  margin: 80px auto;
-  padding: 60px 20px;
-  max-width: 1200px;
-  background: linear-gradient(135deg, #154214 0%, #153c20 100%);
-  border-radius: 20px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-  position: relative;
-  overflow: hidden;
-}
+
 
 .tools-section::before {
   content: '';
@@ -630,7 +621,7 @@ ul.tech {
 }
 
 .tools-section h2 {
-  color: #fff;
+  color: #175c27;
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 50px;
@@ -647,17 +638,7 @@ ul.tech {
   z-index: 1;
 }
 
-.tech-section {
-  background: rgba(255, 255, 255, 0.95);
-  border-radius: 12px;
-  padding: 20px 15px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-}
+
 
 .tech-section::before {
   content: '';
@@ -683,9 +664,10 @@ ul.tech {
   margin-bottom: 18px;
   font-size: 1.1rem;
   font-weight: 600;
-  color: #2c3e50;
+  color: #214d25;
   position: relative;
   display: inline-block;
+  
 }
 
 .tech-section h3::after {
@@ -803,7 +785,7 @@ ul.tech {
 
 /* Dark mode */
 body.dark .tools-section {
-  background: linear-gradient(135deg, #1a2e1b 0%, #163e25 100%);
+  background: linear-gradient(135deg, #101010 0%, #1b1b1b 100%);
 }
 
 body.dark .tech-section {
