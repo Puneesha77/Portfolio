@@ -7,6 +7,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
+    
 }
 
 :root {
@@ -27,6 +28,7 @@ body {
     background: var(--body-color);
     margin: 0;
     line-height: 1.6;
+    overflow-x: hidden;
 }
 
 /* Dark mode */
