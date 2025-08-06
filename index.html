@@ -40,6 +40,7 @@
         <div class="nav-menu-btn">
           <i class="uil uil-bars" onclick="myMenuFunction()"></i>
         </div>
+        
 
         
       </nav>
@@ -225,6 +226,35 @@
 
     lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
   });
+  
+   //Get hamburger and nav menu elements
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+
+        // Toggle mobile menu
+        function toggleMenu() {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        }
+
+        // Add click event listener to hamburger
+        hamburger.addEventListener('click', toggleMenu);
+
+        // Close menu when clicking on nav links (optional)
+        document.querySelectorAll('.nav-menu li a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Close menu when clicking outside (optional)
+        document.addEventListener('click', (e) => {
+            if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            }
+        });
 
 
 </script>
