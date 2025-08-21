@@ -12,14 +12,14 @@
 :root {
     --body-color: rgba(250, 250, 250);
     --color-white: rgba(250, 250, 250);
-    --text-color: rgb(104, 94, 94);
+    --text-color: rgb(0, 0, 0);
     --first-color: rgb(24, 132, 55);
     --first-shadow: rgba(0, 0, 0, 0.1);
     --box-color: #fff;
     --nav-color: #fff;
     --nav-icon: #000;
     --logo-color: #000;
-    --icon-color: #242526;
+    --icon-color: #000000;
     --mode-color: #cfcfcf;
 }
 
@@ -41,6 +41,95 @@ body.dark {
     --icon-color: #ffffff;
     --mode-color: #ffffff;
 }
+/* General reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  overflow-x: hidden; /* prevent horizontal scrollbar */
+  scroll-behavior: smooth;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* ABOUT PAGE WRAPPER */
+.about-section {
+  position: relative;
+  width: 100%;   /* use percentage, not 100vw */
+  min-height: 100vh;
+  background: linear-gradient(to right, #2b5876, #4e4376);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  overflow: hidden; /* stops inner overflows */
+}
+
+/* CONTENT BOX */
+.about-content {
+  max-width: 1000px;
+  text-align: center;
+  z-index: 2;
+  position: relative;
+}
+
+.about-content h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  animation: fadeInDown 1s ease forwards;
+}
+
+.about-content p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  animation: fadeInUp 1.2s ease forwards;
+}
+
+/* SIMPLE, SMOOTH ANIMATIONS */
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* BACKGROUND EFFECTS (NO OVERFLOW) */
+.about-section::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;  /* fixed */
+  height: 100%;
+  background: url('your-bg.svg') no-repeat center/cover;
+  z-index: 0;
+  opacity: 0.15;
+  pointer-events: none; /* don’t block clicks */
+}
+
+/* FOOTER */
+footer {
+  background: #111;
+  color: #ddd;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+  z-index: 5; /* above backgrounds */
+}
+
+footer a {
+  color: #ffcc00;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+
+
 
 /* Ensure all text turns white in dark mode */
 body.dark,
@@ -604,15 +693,13 @@ ul.tech {
 
 
 .tools-section::before {
-  content: '';
   position: absolute;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
-  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="75" cy="75" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="50" cy="10" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="10" cy="60" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="90" cy="40" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
-  opacity: 0.3;
-  animation: float 20s ease-in-out infinite;
+  width: 100%;
+  height: 100%;
+  z-index: -1;   /* push behind content */
+  pointer-events: none; /* prevent blocking clicks */
 }
 
 @keyframes float {
@@ -824,7 +911,7 @@ footer {
 }
 
 body.dark footer {
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .footer-container {
@@ -841,14 +928,14 @@ body.dark footer {
 }
 
 body.dark .top-footer {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .footer-logo-image {
     width: 60px;
     height: 60px;
     margin-bottom: 1rem;
-    box-shadow: 0 2px 8px rgba(197, 209, 200, 0.3);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
     border-radius: 8px;
 }
 
