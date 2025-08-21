@@ -1,3 +1,7 @@
+import "core-js/stable";
+import "regenerator-runtime/runtime";
+
+// Your other JS code here
 document.addEventListener("DOMContentLoaded", () => {
   // Typewriter Effect
   const typedTextElement = document.getElementById("typedText");
