@@ -109,7 +109,7 @@ html, body {
   background: url('your-bg.svg') no-repeat center/cover;
   z-index: 0;
   opacity: 0.15;
-  pointer-events: none; /* don’t block clicks */
+  pointer-events: none; /* don't block clicks */
 }
 
 /* FOOTER */
@@ -370,7 +370,7 @@ i {
     font-size: 16px;
 }
 
-/*--Social Icons--*/
+/*--Social Icons - FIXED ANIMATION--*/
 .social-icons {
     display: flex;
     margin-top: 100px;
@@ -389,45 +389,31 @@ i {
     box-shadow: 0px 1px 5px 3px #22b24a;
     cursor: pointer;
     position: relative;
-    animation: spin 2s linear infinite;
+    /* Fixed: Simple gentle float animation instead of complex spin+slide */
+    animation: gentleFloat 3s ease-in-out infinite;
+    transition: all 0.3s ease;
 }
 
-.icon_circle {
-    position: absolute;
-    transform: translate(-50%, -50%);
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    animation: iconSlide 4s infinite alternate, spin 2s linear infinite;
-}
+/* REMOVED: Problematic duplicate .icon_circle class with absolute positioning */
 
-@keyframes spin {
-    0% {
-        transform: translate(-50%, -50%) rotate(0deg);
-    }
-    100% {
-        transform: translate(-50%, -50%) rotate(360deg);
-    }
-}
-
-@keyframes iconSlide {
-    25% {
-        border: 2px solid #7be62e;
-        left: 0px;
+/* Fixed: Simple gentle floating animation */
+@keyframes gentleFloat {
+    0%, 100% {
+        transform: translateY(0px);
     }
     50% {
-        border: 2px solid #027731;
-        left: 70px;
-    }
-    75% {
-        border: 2px solid #0b644b;
-        left: 145px;
-    }
-    100% {
-        border: 2px solid #1e4513;
-        left: 216px;
+        transform: translateY(-8px);
     }
 }
+
+/* Enhanced hover effect */
+.social-icons .icon_circle:hover {
+    transform: translateY(-12px) scale(1.1);
+    box-shadow: 0px 2px 8px 4px #22b24a;
+    animation-play-state: paused;
+}
+
+/* REMOVED: Problematic @keyframes spin and @keyframes iconSlide */
 
 .social_icons:hover .icon_circle {
     animation-play-state: paused;
@@ -670,6 +656,7 @@ body.dark .tech-section {
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease; /* Added smooth transition */
 }
 
 .goals-section h3,
@@ -690,8 +677,6 @@ ul.tech {
 }
 
 /* Main tools section container */
-
-
 .tools-section::before {
   position: absolute;
   top: 0;
@@ -725,8 +710,6 @@ ul.tech {
   z-index: 1;
 }
 
-
-
 .tech-section::before {
   content: '';
   position: absolute;
@@ -743,8 +726,8 @@ ul.tech {
 }
 
 .tech-section:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px); /* Reduced from -5px for smoother effect */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12); /* Reduced intensity */
 }
 
 .tech-section h3 {
@@ -754,7 +737,6 @@ ul.tech {
   color: #214d25;
   position: relative;
   display: inline-block;
-  
 }
 
 .tech-section h3::after {
@@ -792,6 +774,8 @@ ul.tech {
   border: 1px solid rgba(0, 0, 0, 0.04);
   position: relative;
   overflow: hidden;
+  /* Fixed: Only animate on page load, not continuously */
+  animation: fadeInUp 0.6s ease forwards;
 }
 
 .tool-card::before {
@@ -854,21 +838,6 @@ ul.tech {
 .tool-card:nth-child(4) { animation-delay: 0.4s; }
 .tool-card:nth-child(5) { animation-delay: 0.5s; }
 .tool-card:nth-child(6) { animation-delay: 0.6s; }
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.tool-card {
-  animation: fadeInUp 0.6s ease forwards;
-}
 
 /* Dark mode */
 body.dark .tools-section {
@@ -1141,4 +1110,4 @@ body.dark .top-footer {
     .tool-card span {
         font-size: 8px;
     }
-}
+  }
