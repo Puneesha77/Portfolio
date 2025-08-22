@@ -21,6 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
           charIndex--;
           setTimeout(deleteWord, 100); // Deleting speed
       } else {
+        
           wordIndex = (wordIndex + 1) % words.length; // Move to the next word
           setTimeout(typeWord, 500); // Pause before typing the next word
       }
