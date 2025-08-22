@@ -687,10 +687,6 @@ ul.tech {
   pointer-events: none; /* prevent blocking clicks */
 }
 
-@keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
-}
 
 .tools-section h2 {
   color: #175c27;
