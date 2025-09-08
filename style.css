@@ -258,7 +258,7 @@ body.dark #sun {
     font-size: 24px;
     font-weight: 600;
     text-transform: capitalize;
-    line-height: 1.4;   /* gives breathing room */
+    line-height: 1.5;   /* gives breathing room */
     overflow: hidden;
     white-space: nowrap;
     border-right: 2px solid #149e3d;
