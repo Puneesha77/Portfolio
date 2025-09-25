@@ -1014,3 +1014,77 @@ body.dark .top-footer {
         padding-inline: 5%;
     }
 }
+/* QR Modal (no horizontal scroll at all) */
+.qr-modal {
+  display: none;
+  position: fixed;
+  top: 0; 
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.75);
+
+  /* Center content safely */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* Kill scrollbars */
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+/* Modal Card */
+.qr-modal-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  width: min(90%, 350px); /* responsive: max 350px */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+  position: relative;
+}
+
+/* Title */
+.qr-modal-content h2 {
+  margin-bottom: 10px;
+  font-size: 1.3rem;
+  color: #222;
+}
+
+/* QR Image */
+.qr-image {
+  width: 180px;
+  height: 180px;
+  margin: 10px auto;
+  display: block;
+}
+
+/* Close Button */
+.qr-close {
+  position: absolute;
+  top: 10px; 
+  right: 15px;
+  font-size: 26px;
+  font-weight: bold;
+  color: #444;
+  cursor: pointer;
+}
+
+.qr-close:hover {
+  color: #e63946;
+}
+
+/* Subtext */
+.qr-modal-content p {
+  font-size: 0.9rem;
+  color: #555;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden; /* 🔑 no horizontal scroll ever */
+}

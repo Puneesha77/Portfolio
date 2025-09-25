@@ -28,7 +28,9 @@
             <li class="nav_list"><a href="about.html" class="nav-link active-link">About</a></li>
             <li class="nav_list"><a href="projects.html" class="nav-link active-link">Projects</a></li>
             <li class="nav_list"><a href="#contact" class="nav-link active-link">Contact</a></li>
-            <li class="nav_list"><a href="qr.html" class="nav-link active-link">Scan My CV</a></li>
+            <li class="nav_list">
+    <a href="#" class="nav-link active-link" id="qrButton">Scan My CV</a>
+</li>
           </ul>
         </div>
         <!-- Dark mode -->
@@ -157,8 +159,47 @@
         </footer>
       </main>
     </div>
+     <div id="qrModal" class="qr-modal">
+      <div class="qr-modal-content">
+        <span class="qr-close" id="qrClose">&times;</span>
+        <h2>Scan to View My CV</h2>
+        <img src="images/your-qr-code.png" alt="QR Code" class="qr-image">
+        <p>Point your camera here to access my CV instantly.</p>
+      </div>
+    </div>
+
 <script>
+  /* ----------------- QR MODAL ----------------- */
   
+  function openQRModal() {
+    document.getElementById('qrModal').style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  }
+  function closeQRModal() {
+    document.getElementById('qrModal').style.display = 'none';
+    document.body.style.overflow = 'auto';
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    const qrButton = document.getElementById('qrButton');
+    const qrClose = document.getElementById('qrClose');
+    const qrModal = document.getElementById('qrModal');
+
+    if (qrButton) {
+      qrButton.addEventListener('click', function(e) {
+        e.preventDefault();
+        openQRModal();
+      });
+    }
+    if (qrClose) {
+      qrClose.addEventListener('click', closeQRModal);
+    }
+    window.addEventListener('click', function(event) {
+      if (event.target === qrModal) {
+        closeQRModal();
+      }
+    });
+  });
  
   
   const form = document.getElementById('sheetdb-form');
