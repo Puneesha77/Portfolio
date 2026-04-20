@@ -26,7 +26,7 @@
                     <li class="nav_list"><a href="#projects" class="nav-link">Projects</a></li>
                     <li class="nav_list"><a href="index.html#contact" class="nav-link">Contact</a></li>
                     <li class="nav_list">
-    <a href="#" class="nav-link active-link" id="qrButton">Scan My CV</a>
+    <a href="#" id="qrButton" class="nav-link active-link">My CV</a>
 </li>
                 </ul>
             </div>
@@ -37,9 +37,11 @@
                     <i class="fa fa-sun" id="sun"></i>
                 </div>
             </div>
-            <div class="nav-menu-btn">
-                <i class="uil uil-bars" onclick="myMenuFunction()"></i>
-            </div>
+            <div class="nav-menu-btn" id="hamburger" onclick="myMenuFunction()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
         </nav>
 
         <main>
@@ -294,14 +296,7 @@
             </footer>
         </main>
     </div>
-    <div id="qrModal" class="qr-modal">
-      <div class="qr-modal-content">
-        <span class="qr-close" id="qrClose">&times;</span>
-        <h2>Scan to View My CV</h2>
-        <img src="images/your-qr-code.png" alt="QR Code" class="qr-image">
-        <p>Point your camera here to access my CV instantly.</p>
-      </div>
-    </div>
+    
 
     <script>
          /* ----------------- QR MODAL ----------------- */

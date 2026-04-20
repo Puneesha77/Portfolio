@@ -29,7 +29,7 @@
             <li class="nav_list"><a href="projects.html" class="nav-link active-link">Projects</a></li>
             <li class="nav_list"><a href="index.html#contact" class="nav-link active-link">Contact</a></li>
             <li class="nav_list">
-    <a href="#" class="nav-link active-link" id="qrButton">Scan My CV</a>
+    <a href="#" id="qrButton" class="nav-link active-link">My CV</a>
 </li>
           </ul>
         </div>
@@ -40,8 +40,10 @@
             <i class="fa fa-sun" id="sun"></i>
           </div>
         </div>
-        <div class="nav-menu-btn">
-          <i class="uil uil-bars" onclick="myMenuFunction()"></i>
+        <div class="nav-menu-btn" id="hamburger" onclick="myMenuFunction()">
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
       </nav>
       <br>
@@ -53,7 +55,7 @@
     <div class="about-right">
       <h2>About Me</h2>
       <p class="bio">
-        I'm a passionate software engineering student with a strong background in mathematics and ICT. I’m committed to building efficient and creative software solutions that solve real-world problems. I'm hot-tempered but hardworking and always focused on growth.
+        I'm a passionate Data Analyst and Business Systems enthusiast with a strong foundation in software engineering, mathematics, and ICT. I thrive at the intersection of data and business — turning raw numbers into meaningful insights and designing systems that streamline operations. I'm deeply interested in BI tools, data pipelines, and how technology can drive smarter business decisions. Hardworking, detail-oriented, and always eager to grow.
       </p>
       <br>
       
@@ -80,71 +82,61 @@
 <section class="skills-section">
   <h2> Skills</h2>
       <div class="card-container">
-        
-        <div class="card">
+
+  <div class="card">
     <div class="circle">
-      <svg>
-        <circle class="bg" cx="75" cy="75" r="70"></circle>
-        <circle class="progress" cx="75" cy="75" r="70" style="stroke-dashoffset: calc(440 - 440 * 60 / 100);"></circle>
-      </svg>
+      <svg><circle class="bg" cx="75" cy="75" r="70"></circle>
+        <circle class="progress" cx="75" cy="75" r="70" style="stroke-dashoffset: calc(440 - 440 * 80 / 100);"></circle></svg>
       <div class="percentage">80%</div>
     </div>
-    <div class="label">HTML</div>
+    <div class="label">SQL</div>
   </div>
+
   <div class="card">
     <div class="circle">
-      <svg>
-        <circle class="bg" cx="75" cy="75" r="70"></circle>
-        <circle class="progress" cx="75" cy="75" r="70" style="stroke-dashoffset: calc(440 - 440 * 60 / 100);"></circle>
-      </svg>
+      <svg><circle class="bg" cx="75" cy="75" r="70"></circle>
+        <circle class="progress" cx="75" cy="75" r="70" style="stroke-dashoffset: calc(440 - 440 * 75 / 100);"></circle></svg>
+      <div class="percentage">75%</div>
+    </div>
+    <div class="label">Excel / Sheets</div>
+  </div>
+
+  <div class="card">
+    <div class="circle">
+      <svg><circle class="bg" cx="75" cy="75" r="70"></circle>
+        <circle class="progress" cx="75" cy="75" r="70" style="stroke-dashoffset: calc(440 - 440 * 65 / 100);"></circle></svg>
+      <div class="percentage">65%</div>
+    </div>
+    <div class="label">Power BI</div>
+  </div>
+
+  <div class="card">
+    <div class="circle">
+      <svg><circle class="bg" cx="75" cy="75" r="70"></circle>
+        <circle class="progress" cx="75" cy="75" r="70" style="stroke-dashoffset: calc(440 - 440 * 60 / 100);"></circle></svg>
       <div class="percentage">60%</div>
-    </div>
-    <div class="label">CSS</div>
-  </div>
-
-  <div class="card">
-    <div class="circle">
-      <svg>
-        <circle class="bg" cx="75" cy="75" r="70"></circle>
-        <circle class="progress" cx="75" cy="75" r="70" style="stroke-dashoffset: calc(440 - 440 * 50 / 100);"></circle>
-      </svg>
-      <div class="percentage">50%</div>
-    </div>
-    <div class="label">JavaScript</div>
-  </div>
-
-  <div class="card">
-    <div class="circle">
-      <svg>
-        <circle class="bg" cx="75" cy="75" r="70"></circle>
-        <circle class="progress" cx="75" cy="75" r="70" style="stroke-dashoffset: calc(440 - 440 * 50 / 100);"></circle>
-      </svg>
-      <div class="percentage">50%</div>
-    </div>
-    <div class="label">Java</div>
-  </div>
-
-  <div class="card">
-    <div class="circle">
-      <svg>
-        <circle class="bg" cx="75" cy="75" r="70"></circle>
-        <circle class="progress" cx="75" cy="75" r="70" style="stroke-dashoffset: calc(440 - 440 * 50 / 100);"></circle>
-      </svg>
-      <div class="percentage">50%</div>
-    </div>
-    <div class="label">C#</div>
-  </div>
-
-  <div class="card">
-    <div class="circle">
-      <svg>
-        <circle class="bg" cx="75" cy="75" r="70"></circle>
-        <circle class="progress" cx="75" cy="75" r="70" style="stroke-dashoffset: calc(440 - 440 * 50 / 100);"></circle>
-      </svg>
-      <div class="percentage">50%</div>
     </div>
     <div class="label">Python</div>
   </div>
+
+  <div class="card">
+    <div class="circle">
+      <svg><circle class="bg" cx="75" cy="75" r="70"></circle>
+        <circle class="progress" cx="75" cy="75" r="70" style="stroke-dashoffset: calc(440 - 440 * 55 / 100);"></circle></svg>
+      <div class="percentage">55%</div>
+    </div>
+    <div class="label">Data Modelling</div>
+  </div>
+
+  <div class="card">
+    <div class="circle">
+      <svg><circle class="bg" cx="75" cy="75" r="70"></circle>
+        <circle class="progress" cx="75" cy="75" r="70" style="stroke-dashoffset: calc(440 - 440 * 70 / 100);"></circle></svg>
+      <div class="percentage">70%</div>
+    </div>
+    <div class="label">Business Analysis</div>
+  </div>
+
 </div>
 </section>
 <br>
@@ -214,7 +206,35 @@
   </div>
   </section>
 
-  <!-- Reporting Tools 
+  
+  <!-- Analytics & BI Tools -->
+   <section class="tech-section">
+  <h3>Analytics & BI Tools</h3>
+  <div class="tools-grid">
+    <div class="tool-card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg" alt="Power BI" width="48" height="48" />
+      <span>Power BI</span>
+    </div>
+    <div class="tool-card">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" width="48" height="48" />
+      <span>Python (pandas)</span>
+    </div>
+    <div class="tool-card">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg" alt="SQL Server" width="48" height="48" />
+      <span>SQL Server</span>
+    </div>
+    <div class="tool-card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/3/34/Microsoft_Office_Excel_%282019%E2%80%93present%29.svg" alt="Excel" width="48" height="48" />
+      <span>Excel</span>
+    </div>
+    <div class="tool-card">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" alt="Google Sheets" width="48" height="48" />
+      <span>Google Sheets</span>
+    </div>
+  </div>
+  </section>
+
+<!-- Reporting Tools 
    <section class="tech-section">
   <h3>Reporting Tools</h3>
   <div class="tools-grid">
@@ -402,5 +422,32 @@ window.addEventListener("scroll", function () {
 
 
 </script>
-  </body>
+  
+<script>
+  function myMenuFunction() {
+    const navMenu = document.getElementById("myNavMenu");
+    const hamburger = document.getElementById("hamburger");
+    if (navMenu) navMenu.classList.toggle("active");
+    if (hamburger) hamburger.classList.toggle("active");
+  }
+  document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.nav_menu_list .nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        const nm = document.getElementById("myNavMenu");
+        const hb = document.getElementById("hamburger");
+        if (nm) nm.classList.remove("active");
+        if (hb) hb.classList.remove("active");
+      });
+    });
+    document.addEventListener('click', (e) => {
+      const hb = document.getElementById("hamburger");
+      const nm = document.getElementById("myNavMenu");
+      if (hb && nm && !hb.contains(e.target) && !nm.contains(e.target)) {
+        nm.classList.remove("active");
+        hb.classList.remove("active");
+      }
+    });
+  });
+</script>
+</body>
 </html>

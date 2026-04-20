@@ -1188,3 +1188,139 @@ html, body {
   justify-content: center;
   align-items: center;
 }
+
+/* ===== ABOUT HIGHLIGHTS ===== */
+.about-highlights {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin: 20px 0;
+}
+
+.highlight-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  background: var(--box-color);
+  border-left: 4px solid var(--first-color);
+  border-radius: 8px;
+  padding: 14px 18px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+}
+
+.highlight-item i {
+  font-size: 22px;
+  color: var(--first-color);
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.highlight-item h4 {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-color);
+  margin-bottom: 4px;
+}
+
+.highlight-item p {
+  font-size: 13px;
+  color: var(--text-color);
+  margin: 0;
+  opacity: 0.85;
+}
+
+/* ===== MOBILE NAV (about page) ===== */
+.nav-menu-btn {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+  z-index: 1001;
+  padding: 4px;
+}
+
+.nav-menu-btn span {
+  width: 26px;
+  height: 3px;
+  background: var(--nav-icon);
+  border-radius: 3px;
+  transition: all 0.3s ease;
+  display: block;
+}
+
+.nav-menu-btn.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 6px);
+}
+.nav-menu-btn.active span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+.nav-menu-btn.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -6px);
+}
+
+@media (max-width: 768px) {
+  .nav-menu-btn {
+    display: flex;
+  }
+
+  .nav-menu {
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    background: var(--nav-color);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    z-index: 998;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease, padding 0.35s ease;
+    padding: 0;
+  }
+
+  .nav-menu.active {
+    max-height: 400px;
+    padding: 10px 0 16px;
+  }
+
+  .nav_menu_list {
+    flex-direction: column;
+    gap: 0;
+    width: 100%;
+  }
+
+  .nav_menu_list .nav_list {
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+  }
+
+  body.dark .nav_menu_list .nav_list {
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .nav-link {
+    display: block;
+    padding: 12px 5%;
+    font-size: 15px;
+  }
+
+  .about-me-container {
+    padding: 10px 5% 40px;
+  }
+
+  .about-right {
+    width: 100%;
+    padding: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .highlight-item {
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+
+/* ===== ABOUT CONTAINER TOP PADDING ===== */
+.about-me-container {
+  padding-top: 100px;
+}

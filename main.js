@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   // Typewriter Effect
   const typedTextElement = document.getElementById("typedText");
-  const words = ["Aspiring Software Engineer", "Backend Developer in Training", "Tech Enthusiast & Problem Solver","Future Full-Stack Developer"];
+  const words = ["Aspiring Data Analyst", "Business Systems Enthusiast", "Tech & Data Driven Problem Solver", "Future BI & Analytics Professional"];
   let wordIndex = 0;
   let charIndex = 0;
 
@@ -41,6 +41,16 @@ document.addEventListener("DOMContentLoaded", () => {
   
 
   typeWord(); // Start the typewriter effect
+});
+document.addEventListener('DOMContentLoaded', function () {
+  const qrButton = document.getElementById('qrButton');
+
+  if (qrButton) {
+    qrButton.addEventListener('click', function (e) {
+      e.preventDefault(); // 🚫 stop page jump
+      openModal();        // ✅ open popup
+    });
+  }
 });
 
 // JavaScript to toggle light and dark mode
@@ -84,8 +94,31 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function myMenuFunction() {
     const navMenu = document.getElementById("myNavMenu");
+    const hamburger = document.getElementById("hamburger");
     navMenu.classList.toggle("active");
+    if (hamburger) hamburger.classList.toggle("active");
   }
+  window.myMenuFunction = myMenuFunction;
+
+  // Close menu when a nav link is clicked
+  document.querySelectorAll('.nav_menu_list .nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+      const navMenu = document.getElementById("myNavMenu");
+      const hamburger = document.getElementById("hamburger");
+      if (navMenu) navMenu.classList.remove("active");
+      if (hamburger) hamburger.classList.remove("active");
+    });
+  });
+
+  // Close menu when clicking outside
+  document.addEventListener('click', (e) => {
+    const hamburger = document.getElementById("hamburger");
+    const navMenu = document.getElementById("myNavMenu");
+    if (hamburger && navMenu && !hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+      navMenu.classList.remove("active");
+      hamburger.classList.remove("active");
+    }
+  });
 
 
   

@@ -7,16 +7,19 @@
     <style>
         /* QR Modal Styles */
         .qr-modal {
-            display: none;
-            position: fixed;
-            z-index: 10000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
-            backdrop-filter: blur(3px);
-        }
+  display: none;
+  position: fixed;
+  z-index: 10000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+
+  /* ADD THIS */
+  justify-content: center;
+  align-items: center;
+}
 
         .qr-modal-content {
             position: relative;
@@ -230,60 +233,49 @@
     <div class="demo-section">
         <h1 class="demo-title">QR Code Popup Demo</h1>
         <p class="demo-subtitle">Click the button below to see the QR code popup in action</p>
-        <button class="demo-button" onclick="openQRModal()">📱 Scan My CV</button>
+        <button class="demo-button" onclick="openModal()">
         <p style="margin-top: 30px; color: #999; font-size: 14px;">
             To use this in your project, just copy the CSS and JavaScript parts!
         </p>
     </div>
 
     <!-- QR Code Modal -->
-    <div id="qrModal" class="qr-modal">
-        <div class="qr-modal-content">
-            <span class="qr-close" onclick="closeQRModal()">&times;</span>
-            <h2 class="qr-title">📱 Scan My CV QR Code</h2>
-            <p class="qr-subtitle">Point your camera at the QR code to view my CV</p>
-            <div class="qr-code-container">
-                <img src="your-qr-code.png" alt="CV QR Code" class="qr-code-img" 
-                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" 
-                     onload="this.nextElementSibling.style.display='none';">
-                <div class="qr-placeholder">
-                    <div style="font-size: 48px; margin-bottom: 10px;">📄</div>
-                    <div style="font-size: 16px; margin-bottom: 5px;">QR Code will appear here</div>
-                    <div style="font-size: 12px; color: #999;">Upload 'your-qr-code.png' to show your QR code</div>
-                </div>
-            </div>
-            <div class="qr-instructions">
-                <strong>How to scan:</strong>
-                • Open your phone's camera app<br>
-                • Point it at the QR code above<br>
-                • Tap the notification that appears<br>
-                • View my CV instantly!
-            </div>
-            <p class="qr-url">
-                Or visit: <a href="https://puneesha77.github.io/Puneesha_CV/" target="_blank">puneesha77.github.io/Puneesha_CV</a>
-            </p>
-        </div>
-    </div>
+<div id="cvModal" class="qr-modal">
+  <div class="qr-modal-content">
+    <span class="qr-close" onclick="closeModal()">&times;</span>
+
+    <h2>📄 Download My CV</h2>
+    <p>Click below to download my latest CV</p>
+
+    <button class="demo-button" onclick="downloadCV()">⬇️ Download CV</button>
+  </div>
+</div>
 
     <script>
-  // QR Modal Functions
-  function openQRModal() {
-      document.getElementById('qrModal').style.display = 'block';
-      document.body.style.overflow = 'hidden';
-  }
+ function openModal() {
+  document.getElementById('cvModal').style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+}
 
-  function closeQRModal() {
-      document.getElementById('qrModal').style.display = 'none';
-      document.body.style.overflow = 'auto';
-  }
+function closeModal() {
+  document.getElementById('cvModal').style.display = 'none';
+  document.body.style.overflow = 'auto';
+}
 
-  // Close modal when clicking outside
+function downloadCV() {
+  const link = document.createElement('a');
+  link.href = 'image/Puneesha.pdf'; // 🔥 put correct path
+  link.download = 'Puneesha_CV.pdf';
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+}
   window.onclick = function(event) {
-      const modal = document.getElementById('qrModal');
-      if (event.target === modal) {
-          closeQRModal();
-      }
+  const modal = document.getElementById('cvModal');
+  if (event.target === modal) {
+    closeModal();
   }
+};
 
   // Close modal with Escape key
   document.addEventListener('keydown', function(event) {
@@ -312,5 +304,24 @@
   });
 </script>
 
+
+<script>
+  function myMenuFunction() {
+    const navMenu = document.getElementById("myNavMenu");
+    const hamburger = document.getElementById("hamburger");
+    if (navMenu) navMenu.classList.toggle("active");
+    if (hamburger) hamburger.classList.toggle("active");
+  }
+  document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.nav_menu_list .nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        const nm = document.getElementById("myNavMenu");
+        const hb = document.getElementById("hamburger");
+        if (nm) nm.classList.remove("active");
+        if (hb) hb.classList.remove("active");
+      });
+    });
+  });
+</script>
 </body>
 </html>
