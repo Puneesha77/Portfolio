@@ -312,26 +312,40 @@
         </footer>
       </main>
     </div>
-     <div id="qrModal" class="qr-modal">
-      <div class="qr-modal-content">
-        <span class="qr-close" id="qrClose">&times;</span>
-        <h2>Scan to View My CV</h2>
-        <img src="images/your-qr-code.png" alt="QR Code" class="qr-image">
-        <p>Point your camera here to access my CV instantly.</p>
+     <div class="qr-modal" id="cvModal">
+  <div class="qr-modal-content">
+
+    <div class="qr-modal-header">
+      <h2>Puneesha Perera</h2>
+      <div class="qr-modal-actions">
+        <a href="images/CV.pdf" download class="qr-download-btn">
+          ↓ Download
+        </a>
+        <button class="qr-close" onclick="closeQRModal()">&#x2715;</button>
       </div>
     </div>
+
+    <iframe src="images/CV.pdf"></iframe>
+  </div>
+</div>
+
 <script>
    /* ----------------- QR MODAL ----------------- */
   
-  function openQRModal() {
-    document.getElementById('qrModal').style.display = 'flex';
+    function openQRModal() {
+    document.getElementById('cvModal').style.display = 'flex';
     document.body.style.overflow = 'hidden';
   }
+
   function closeQRModal() {
-    document.getElementById('qrModal').style.display = 'none';
+    document.getElementById('cvModal').style.display = 'none';
     document.body.style.overflow = 'auto';
   }
 
+  // Close on backdrop click
+  document.getElementById('cvModal').addEventListener('click', function(e) {
+    if (e.target === this) closeQRModal();
+  });
   document.addEventListener('DOMContentLoaded', function() {
     const qrButton = document.getElementById('qrButton');
     const qrClose = document.getElementById('qrClose');

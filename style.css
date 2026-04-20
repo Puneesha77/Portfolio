@@ -1042,89 +1042,149 @@ body.dark .top-footer {
     }
 }
 /* QR Modal (no horizontal scroll at all) */
+/* ── CV Modal: mobile fix ───────────────────── */
+
+/* 1. Modal backdrop */
 .qr-modal {
+    display: none;
   display: none;
   position: fixed;
-  top: 0; 
-  left: 0;
-  right: 0;
-  bottom: 0;
+  inset: 0;
   z-index: 9999;
-  background: rgba(0, 0, 0, 0.75);
-
-  /* Center content safely */
-  display: flex;
+  background: rgba(0, 0, 0, 0.82);
   justify-content: center;
   align-items: center;
-
-  /* Kill scrollbars */
   overflow-x: hidden;
   overflow-y: auto;
 }
 
-/* Modal Card */
+/* 2. Modal card — dark, compact on mobile */
 .qr-modal-content {
-  background: #fff;
-  padding: 20px;
+  background: #1a1a1a;
   border-radius: 12px;
-  text-align: center;
-  width: min(90%, 350px); /* responsive: max 350px */
-  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
   position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 88vw;
+  max-width: 860px;
+  height: 82vh;
+  max-height: 82vh;
+  overflow: hidden;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
 }
 
-/* Title */
-.qr-modal-content h2 {
-  margin-bottom: 10px;
-  font-size: 1.3rem;
-  color: #222;
+body.dark .qr-modal-content {
+  background: #111212;
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-/* QR Image */
-.qr-image {
-  width: 180px;
-  height: 180px;
-  margin: 10px auto;
-  display: block;
+/* 3. Header bar — dark bg, flex row */
+.qr-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background: #111;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  flex-shrink: 0;
+  gap: 10px;
 }
 
-/* Close Button */
-.qr-close {
-  position: absolute;
-  top: 10px; 
-  right: 15px;
-  font-size: 26px;
-  font-weight: bold;
-  color: #444;
+.qr-modal-header h2 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #e0e0e0;
+  flex: 1;
+}
+
+/* 4. Header actions: download + close grouped right */
+.qr-modal-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+/* 5. Download button */
+.qr-download-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #18843a;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 7px 16px;
+  border-radius: 6px;
+  text-decoration: none;
+  border: none;
   cursor: pointer;
+  transition: background 0.2s ease;
+  white-space: nowrap;
+}
+
+.qr-download-btn:hover {
+  background: #146230;
+}
+
+/* 6. Close button */
+.qr-close {
+  position: static;           /* override the old absolute positioning */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  background: #2a2a2a;
+  border: none;
+  border-radius: 6px;
+  color: #ccc;
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
 }
 
 .qr-close:hover {
-  color: #e63946;
+  background: #c0392b;
+  color: #fff;
 }
 
-/* Subtext */
-.qr-modal-content p {
-  font-size: 0.9rem;
-  color: #555;
-}
-html, body {
-  margin: 0;
-  padding: 0;
+/* 7. iframe fills the remaining space */
+.qr-modal-content iframe {
+  flex: 1;
   width: 100%;
-  max-width: 100%;
-  overflow-x: hidden; /* 🔑 no horizontal scroll ever */
+  border: none;
+  min-height: 0;
 }
-/* Hide modal initially */
-.qr-modal {
-  display: none;
-  position: fixed;
-  z-index: 9999;
-  left: 0; 
-  top: 0;
-  width: 100%; 
-  height: 100%;
-  background: rgba(0,0,0,0.7);
-  justify-content: center;
-  align-items: center;
+
+/* 8. Mobile: reduce to 92vw × 78vh */
+@media (max-width: 768px) {
+  .qr-modal-content {
+    width: 92vw;
+    height: 78vh;
+    max-width: 100%;
+    max-height: 78vh;
+    border-radius: 10px;
+  }
+
+  .qr-modal-header {
+    padding: 10px 12px;
+  }
+
+  .qr-modal-header h2 {
+    font-size: 0.9rem;
+  }
+
+  .qr-download-btn {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+
+  .qr-close {
+    width: 30px;
+    height: 30px;
+    font-size: 17px;
+  }
 }
